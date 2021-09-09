@@ -67,7 +67,7 @@ So, meanwhile please use the following command in the terminal of your project: 
 
 npx nyc report --reporter=lcov
 
-## Save the code coverage collected during Cypress tests - [code-coverage]https://www.npmjs.com/package/@cypress/code-coverage
+## Save the code coverage collected during Cypress tests - [code-coverage](https://www.npmjs.com/package/@cypress/code-coverage)
 
 `npm install -D @cypress/code-coverage`
 

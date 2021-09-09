@@ -6,7 +6,14 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "cypress open",
+    "cy:run": "cypress run",
+    "ex:file": "npx nyc report --reporter=lcov"
+  },
+  "nyc": {
+    "exclude": [
+      "src/main.ts"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -26,14 +33,18 @@
     "@angular-devkit/build-angular": "~12.2.4",
     "@angular/cli": "~12.2.4",
     "@angular/compiler-cli": "~12.2.0",
+    "@cypress/code-coverage": "^3.9.10",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
+    "cypress": "^8.3.1",
+    "istanbul-instrumenter-loader": "^3.0.1",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "ngx-build-plus": "^12.2.0",
     "typescript": "~4.3.5"
   }
 }

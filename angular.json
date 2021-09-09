@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -65,13 +68,14 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "Angular-Code-Coverage:build:production"
             },
             "development": {
-              "browserTarget": "Angular-Code-Coverage:build:development"
+              "browserTarget": "Angular-Code-Coverage:build:development",
+              "extraWebpackConfig": "./cypress/coverage.webpack.js"
             }
           },
           "defaultConfiguration": "development"

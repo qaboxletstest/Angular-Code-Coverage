@@ -10,18 +10,71 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+
+## Instrument Application Code - 
+* Install ngx-build-plus to extends the Angular CLI's build process and instrument the code
+`npm i -D ngx-build-plus`
+Then change your npm start script to require this module before starting the dev server
+* Add webpack coverage config file coverage.webpack.js to cypress folder
+```
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.(js|ts)$/,
+        loader: 'istanbul-instrumenter-loader',
+        options: { esModules: true },
+        enforce: 'post',
+        include: require('path').join(__dirname, '..', 'src'),
+        exclude: [
+          /\.(e2e|spec)\.ts$/,
+          /node_modules/,
+          /(ngfactory|ngstyle)\.js/
+        ]
+      }
+    ]
+  }
+};
+```
+* Update serve object inside angular.json to use ngx-build with extra config
+
+`"builder": "ngx-build-plus:dev-server",`
+
+* Instrument JS files with istanbul-lib-instrument for subsequent code coverage reporting
+
+`npm i -D istanbul-instrumenter-loader --legacy-peer-deps`
+
+###### --legacy-peer-deps: ignore all peerDependencies when installing, In the new version of npm (v7), by default, npm install will fail when it encounters conflicting peerDependencies. 
+
+When the app starts with yarn start, you should see the coverage information under window.__coverage__ information.
+
+###### Exclude files
+If you want to exclude files from coverage, for example src/serviceWorker.js, add an object named nyc to package.json following the nyc CLI configuration.
+
+```
+"nyc": {
+    "exclude": [
+      "src/main.ts"
+    ]
+  }
+```
+
+### `exclude files from coverage using nyc setup not working - please comment if I'm missing something`
+
+https://github.com/cypress-io/instrument-cra/issues/188
+
+So, meanwhile please use the following command in the terminal of your project: - 
+
+npx nyc report --reporter=lcov
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Running E2E tests in headed mode
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the E2E tests via [Cypress](https://www.cypress.io/).
 
-## Running end-to-end tests
+## Running E2E tests in headless mode
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `ng run cy:run` to execute the E2E tests via [Cypress](https://www.cypress.io/).

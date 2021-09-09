@@ -1,0 +1,44 @@
+.App-header {
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(30px + 2vmin);
+  color: white;
+  border-radius: 100px;
+}
+
+.title{
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: indianred;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: x-large;
+  display: block;
+	width: 38%;
+	padding: 10px 15px;
+	appearance: none;
+	border: none;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  min-height: 350px;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid maroon;
+  border-radius: 100px;
+  justify-content: center;
+}
+
+.header{
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 50px;
+}

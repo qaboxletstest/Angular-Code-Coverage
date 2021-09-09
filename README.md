@@ -65,7 +65,7 @@ If you want to exclude files from coverage, for example src/serviceWorker.js, ad
 
 So, meanwhile please use the following command in the terminal of your project: - 
 
-npx nyc report --reporter=lcov
+`npx nyc report --reporter=lcov`
 
 ## Save the code coverage collected during Cypress tests - [code-coverage](https://www.npmjs.com/package/@cypress/code-coverage)
 

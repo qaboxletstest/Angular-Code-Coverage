@@ -61,7 +61,7 @@ If you want to exclude files from coverage, for example src/serviceWorker.js, ad
 
 ### `exclude files from coverage using nyc setup not working - please comment if I'm missing something`
 
-https://github.com/cypress-io/instrument-cra/issues/188
+[instrument-cra-known-issue](https://github.com/cypress-io/instrument-cra/issues/188)
 
 So, meanwhile please use the following command in the terminal of your project: - 
 

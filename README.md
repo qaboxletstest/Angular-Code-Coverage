@@ -67,6 +67,26 @@ So, meanwhile please use the following command in the terminal of your project: 
 
 npx nyc report --reporter=lcov
 
+## Save the code coverage collected during Cypress tests - https://www.npmjs.com/package/@cypress/code-coverage
+
+`npm install -D @cypress/code-coverage`
+
+Add to your cypress/support/index.js file
+`import '@cypress/code-coverage/support'`
+
+Register tasks in your cypress/plugins/index.js file
+```
+module.exports = (on, config) => {
+  require('@cypress/code-coverage/task')(on, config)
+
+  // add other tasks to be registered here
+
+  // IMPORTANT to return the config object
+  // with the any changed environment variables
+  return config
+}
+```
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.

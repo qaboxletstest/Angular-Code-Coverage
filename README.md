@@ -48,7 +48,7 @@ module.exports = {
 
 When the app starts with yarn start, you should see the coverage information under window.__coverage__ information.
 
-###### Exclude files
+* Exclude files
 If you want to exclude files from coverage, for example src/serviceWorker.js, add an object named nyc to package.json following the nyc CLI configuration.
 
 ```

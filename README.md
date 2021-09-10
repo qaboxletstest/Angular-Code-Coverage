@@ -14,7 +14,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Instrument Application Code - 
 * Install ngx-build-plus to extends the Angular CLI's build process and instrument the code
 `npm i -D ngx-build-plus`
-Then change your npm start script to require this module before starting the dev server
+
 * Add webpack coverage config file coverage.webpack.js to cypress folder
 ```
 module.exports = {

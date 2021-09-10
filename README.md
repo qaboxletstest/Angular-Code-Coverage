@@ -40,6 +40,10 @@ module.exports = {
 
 `"builder": "ngx-build-plus:dev-server",`
 
+and
+
+`"extraWebpackConfig": "./cypress/coverage.webpack.js"` for all environments in there.
+
 * Instrument JS files with istanbul-lib-instrument for subsequent code coverage reporting
 
 `npm i -D istanbul-instrumenter-loader --legacy-peer-deps`

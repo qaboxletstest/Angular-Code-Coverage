@@ -49,7 +49,7 @@ module.exports = {
 When the app starts with `ng serve` or `ng serve --open`, you should see the coverage information under window.__coverage__ information.
 
 * Exclude files
-If you want to exclude files from coverage, for example src/serviceWorker.js, add an object named nyc to package.json following the nyc CLI configuration.
+If you want to exclude files from coverage, for example src/main.ts, add an object named nyc to package.json following the nyc CLI configuration.
 
 ```
 "nyc": {

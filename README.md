@@ -97,8 +97,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running E2E tests in headed mode
 
-Run `ng test` to execute the E2E tests via [Cypress](https://www.cypress.io/).
+Run `npm test` to execute the E2E tests via [Cypress](https://www.cypress.io/).
 
 ## Running E2E tests in headless mode
 
-Run `ng run cy:run` to execute the E2E tests via [Cypress](https://www.cypress.io/).
+Run `npm run cy:run` to execute the E2E tests via [Cypress](https://www.cypress.io/).
